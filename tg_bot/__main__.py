@@ -53,7 +53,7 @@ And the following:
 DONATE_STRING = """Heya, gib moni!
 It took lots of work for [my creator](t.me/infinitEplus) to get me to where I am now, and every donation helps \
 motivate him to make me even better. All the donation money will go to my lunch meals!
-JK, no need of that XD
+JK, no need of that XD """
 
 IMPORTED = {}
 MIGRATEABLE = []
