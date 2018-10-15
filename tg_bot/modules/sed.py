@@ -71,9 +71,9 @@ def sed(bot: Bot, update: Update):
             check = re.match(repl, to_fix, flags=re.IGNORECASE)
 
             if check and check.group(0).lower() == to_fix.lower():
-                update.effective_message.reply_to_message.reply_text("Hey everyone, {} is trying to make "
-                                                                     "me say stuff I don't wanna "
-                                                                     "say!".format(update.effective_user.first_name))
+                update.effective_message.reply_to_message.reply_text("Hey everyone, {} should learn "
+                                                                     "to SED "
+                                                                     "FFS!".format(update.effective_user.first_name))
                 return
 
             if 'i' in flags and 'g' in flags:
@@ -87,7 +87,7 @@ def sed(bot: Bot, update: Update):
         except sre_constants.error:
             LOGGER.warning(update.effective_message.text)
             LOGGER.exception("SRE constant error")
-            update.effective_message.reply_text("Do you even sed? Apparently not.")
+            update.effective_message.reply_text("Google it if you can't SED")
             return
 
         # empty string errors -_-
