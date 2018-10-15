@@ -41,13 +41,12 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
                 msg.delete()
             except BadRequest as err:
                 if err.message == "Message can't be deleted":
-                    bot.send_message(chat.id, "Cannot delete all messages. The messages may be too old, I might "
-                                              "not have delete rights, or this might not be a supergroup.")
+                    bot.send_message(chat.id, "Cannot nuke messages.")
 
                 elif err.message != "Message to delete not found":
                     LOGGER.exception("Error while purging chat messages.")
 
-            bot.send_message(chat.id, "Purge complete.")
+            bot.send_message(chat.id, " Nuked messages. ")
             return "<b>{}:</b>" \
                    "\n#PURGE" \
                    "\n<b>Admin:</b> {}" \
@@ -56,7 +55,7 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
                                                                delete_to - message_id)
 
     else:
-        msg.reply_text("Reply to a message to select where to start purging from.")
+        msg.reply_text("Learn to purge FFS")
 
     return ""
 
